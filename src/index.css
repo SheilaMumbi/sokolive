@@ -1,0 +1,74 @@
+@import '@fontsource-variable/geist/wght.css';
+
+/*
+ * Colour logic
+ *  – surfaces are warm neutrals so product photos carry the page
+ *  – --accent (red-orange) is reserved for urgency + the Claim action
+ *  – --warn (amber) marks "running low" timers, --ok (green) only confirms a claim
+ */
+:root {
+  --bg: #f6f4f0;
+  --surface: #ffffff;
+  --surface-2: #efebe5;
+  --border: rgb(27 25 23 / 0.1);
+  --border-strong: rgb(27 25 23 / 0.22);
+  --text: #1b1917;
+  --muted: #6b655d;
+  --accent: #d63a1c;
+  --accent-hover: #bf3015;
+  --accent-text: #c4321a; /* accent used as text on surfaces */
+  --on-accent: #ffffff;
+  --warn: #b7791f;
+  --ok: #2f8f57;
+  --danger: #c0281b;
+  --overlay: rgb(20 18 15 / 0.62);
+  --focus: #2b5cff;
+  --shadow: 0 1px 2px rgb(27 25 23 / 0.06), 0 8px 24px rgb(27 25 23 / 0.06);
+  --font: 'Geist Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --gutter: 16px;
+  --hh: 60px; /* header height */
+  --tab: 64px; /* bottom tab bar height */
+  color-scheme: light;
+}
+:root[data-theme='dark'] {
+  --bg: #121110;
+  --surface: #1c1a18;
+  --surface-2: #272421;
+  --border: rgb(255 255 255 / 0.09);
+  --border-strong: rgb(255 255 255 / 0.2);
+  --text: #f4f1ec;
+  --muted: #a39d93;
+  --accent: #e0442a;
+  --accent-hover: #ee5638;
+  --accent-text: #ff7a5c;
+  --warn: #f0b24a;
+  --ok: #5ccf8a;
+  --danger: #ff8a7a;
+  --overlay: rgb(0 0 0 / 0.62);
+  --focus: #8fb0ff;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.35);
+  color-scheme: dark;
+}
+@media (min-width: 900px) { :root { --gutter: 32px; --hh: 68px; } }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--hh) + 8px); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 15px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+  overflow-x: hidden;
+}
+h1, h2, h3, p, dl, dd, ol, ul { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
