@@ -4,8 +4,9 @@ A mobile-first storefront for live thrift and sneaker drops. One item goes live 
 
 I built it from a client brief for Wanjiru, who sells pre-loved sneakers and clothes in Nairobi through live sessions on social media. It's a portfolio project, so everything behind the screen is faked. There's no backend, the "server" runs in your browser, and the M-Pesa checkout doesn't send a real prompt or take any money. The photos are Unsplash stand-ins, credited at the bottom.
 
-- Live link: _coming soon_
-- Screen recording: _coming soon_
+- Live link: [sokolive.vercel.app](https://sokolive.vercel.app)
+- Screen recording: [a 38-second walkthrough on a phone-sized screen](docs/demo.webm) (claims, a rollback, filters, dark mode, cart and checkout)
+- Lighthouse on mobile: Performance 92 to 93, Accessibility 100, Best Practices 100
 
 ## The brief
 
@@ -74,8 +75,7 @@ Two things worth knowing while you poke around. The footer has a link that toggl
 
 ## Still to do
 
-- I haven't run Lighthouse yet. My guess is that MSW is the heaviest part of the bundle, since it ships to production because the app has no real backend. If the mobile score is under 90, that's where I'd look first.
-- It isn't deployed yet.
+- Lighthouse passes, but the first paint is the weak spot (about 2 seconds on the throttled mobile profile). MSW is the heaviest part of the bundle, since it ships to production because the app has no real backend. I tried painting the skeleton before the mock API starts, and it made no measurable difference, so I left it out.
 - The photos are stand-ins. For a real store you'd swap them for Wanjiru's own stock.
 - The start and end times come from the same machine, so there's no clock-skew correction. A real server would need it.
 
